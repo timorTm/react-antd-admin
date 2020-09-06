@@ -1,28 +1,28 @@
-import React from "react";
-import { Tabs, Row, Col, message } from "antd";
-import { createFromIconfontCN } from "@ant-design/icons";
-import CopyToClipboard from "react-copy-to-clipboard";
-import * as AntdIcon from "@ant-design/icons";
-import antdIconsColor from "./antd-icon-color";
-import antdIcons from "./antd-icon";
-import IconFontValues from "./iconfont";
+import React from "react"
+import { Tabs, Row, Col, message } from "antd"
+import { createFromIconfontCN } from "@ant-design/icons"
+import CopyToClipboard from "react-copy-to-clipboard"
+import * as AntdIcon from "@ant-design/icons"
+import antdIconsColor from "./antd-icon-color"
+import antdIcons from "./antd-icon"
+import IconFontValues from "./iconfont"
 
-const { TabPane } = Tabs;
+const { TabPane } = Tabs
 const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_1968786_ddivbdaztyv.js",
-});
-const antdIcon: { [key: string]: any } = AntdIcon;
+})
+const antdIcon: { [key: string]: any } = AntdIcon
 
 export default () => {
   const onCopy = (text: string, result: boolean) => {
     if (result) {
       /* 复制成功 */
-      message.success(`${text}复制成功`);
+      message.success(`${text}复制成功`)
     } else {
       /* 复制失败 */
-      message.error(`${text}复制失败`);
+      message.error(`${text}复制失败`)
     }
-  };
+  }
   return (
     <div>
       <Tabs defaultActiveKey="1">
@@ -68,6 +68,7 @@ export default () => {
             <a
               target="_blank"
               href="https://ant.design/components/icon-cn/#components-icon-demo-iconfont"
+              rel="noopener noreferrer"
             >
               https://ant.design/components/icon-cn/#components-icon-demo-iconfont
             </a>
@@ -95,5 +96,5 @@ export default () => {
         </TabPane>
       </Tabs>
     </div>
-  );
-};
+  )
+}
