@@ -1,37 +1,24 @@
-import { Input } from "antd"
-import React, { useImperativeHandle, useRef } from "react"
+import { Button, Input } from "antd"
+import { InputProps } from "antd/es/input"
+import React, { useRef } from "react"
 
-const { Search } = Input
-
-const FancyInput = React.forwardRef((props, ref) => {
-  const inputRef = useRef<Input>(null)
-
-  useImperativeHandle(ref, () => ({
-    focus: () => {
-      inputRef.current?.focus()
-    },
-  }))
-
-  return <Input ref={inputRef} style={{ width: 270 }} />
+const FancyInput = React.forwardRef<Input, InputProps>((props, ref) => {
+  return <Input {...props} ref={ref} />
 })
 
 const UseRef: React.FC = () => {
   const fancyInputEl = useRef<Input>(null)
 
-  const onSearch = () => {
+  const handleClick = () => {
     fancyInputEl.current?.focus()
   }
 
   return (
     <>
-      <Search
-        enterButton="focus next input"
-        onSearch={onSearch}
-        style={{ width: 270 }}
-      />
-      <br />
-      <br />
-      <FancyInput ref={fancyInputEl} />
+      <FancyInput ref={fancyInputEl} style={{ width: 270 }} />
+      <Button onClick={handleClick} type="primary">
+        focus
+      </Button>
     </>
   )
 }
