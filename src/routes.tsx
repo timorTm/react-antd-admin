@@ -41,6 +41,18 @@ const routes: Array<RouteConfig> = [
     path: "/version/:version",
     component: loadable(() => import("pages/version"), options),
   },
+  {
+    path:'/editor/richEditor',
+    component:loadable(()=>import('pages/editor/richEditor'),options)
+  },
+  {
+    path:'/editor/jsonEditor',
+    component:loadable(()=>import('pages/editor/jsonEditor'),options)
+  },
+  {
+    path:'/editor/markdownEditor',
+    component:loadable(()=>import('pages/editor/markdownEditor'),options)
+  }
 ]
 
 export default routes

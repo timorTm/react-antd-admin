@@ -57,6 +57,25 @@ const basicRoutes: Array<Route> = [
     name: "HelloWorld",
   },
   {
+    icon: <BarChartOutlined />,
+    key: "editor",
+    name: "编辑器",
+    children: [
+      {
+        key: "richEditor",
+        name: "富文本编辑器",
+      },
+      {
+        key: "jsonEditor",
+        name: "json编辑器",
+      },
+      {
+        key: "markdownEditor",
+        name: "markDown编辑器",
+      },
+    ],
+  },
+  {
     icon: <InfoCircleOutlined />,
     key: "version",
     name: "版本",
